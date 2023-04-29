@@ -26,56 +26,51 @@ export default function Nav({ open }) {
     navigate("/");
     console.log("loggedout");
   };
-  const handleSocialize = () => {
-    
-    navigate("/");
-   
-  };
+ 
 
   return (
-    <div>
+    <div className="fixed w-screen">
       <div>
-        <ul className="flex  bg-sky-900 text-white w-[100%] p-5">
-          <h1 className="text-3xl font-bold  bg-sky-900 text-white  ">
-            navbar
-          </h1>
-          <li>
-            <Link to="/">home </Link>
-          </li>
-          {!localStorage.getItem("authToken") ? (
-            <div>
-              <li>
-                <button
-                  onClick={() => {
-                    open[0](true);
-                  }}
-                >
-                  LOGIN
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    open[1](true);
-                  }}
-                >
-                  signup
-                </button>
-              </li>
-            </div>
-          ) : (
-            <div>
-              <li>
-                <button onClick={handlelogout}>LOGOUT</button>
-              </li>
-              <li>
-                <button onClick={handleDashboard}>Dashboard</button>
-              </li>
-              <li>
-                <button onClick={handleSocialize}>Socialize</button>
-              </li>
-            </div>
-          )}
+        <ul className="flex justify-between bg-[#363636] h-[70px] text-white w-[100%] p-5">
+          <div>
+            <li className="text-2xl font-bold  text-white  ">
+              <Link to="/">CryptoFolio</Link>
+            </li>
+          </div>
+          <div className="text-[20px] font-bold  text-white ">
+            {!localStorage.getItem("authToken") ? (
+              <div className=" flex">
+                <li className="mx-2">
+                  <button
+                    onClick={() => {
+                      open[0](true);
+                    }}
+                  >
+                    SignIn
+                  </button>
+                </li>
+                <li className="mx-2">
+                  <button
+                    onClick={() => {
+                      open[1](true);
+                    }}
+                  >
+                    SignUp
+                  </button>
+                </li>
+              </div>
+            ) : (
+              <div className=" flex">
+                <li className="mx-2">
+                  <button onClick={handleDashboard}>Dashboard</button>
+                </li>
+                <li className="mx-2">
+                  <button onClick={handlelogout}>SignOut</button>
+                </li>
+               
+              </div>
+            )}
+          </div>
         </ul>
       </div>
       {/* {open && <LoginModal closemod={Open}/>} */}

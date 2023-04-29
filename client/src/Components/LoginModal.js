@@ -52,11 +52,11 @@ export default function LoginModal({ closemod }) {
   } else {
     return (
       <div>
-        <div className="w-[100%] fixed top-0 h-screen snap-none z-100 bg-[#1c1c1cdf]">
-          {" "}
+        <div className="w-[100%] fixed top-0 h-full snap-none z-10  bg-[#1c1c1cdf]">
+          
           {/* background div*/}
-          <div className="text-white">
-            {" "}
+          <div className="text-black bg-white rounded-md border-2 border-red-500 w-[50%] m-auto">
+            
             {/* container div*/}
             <button
               onClick={() => {
