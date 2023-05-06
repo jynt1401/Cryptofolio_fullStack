@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function CoinInfo({ state }) {
+  const navigate = useNavigate();
   const data = state.value;
   console.log(data);
   const [Coindata, setCoindata] = useState({});
@@ -95,8 +97,9 @@ export default function CoinInfo({ state }) {
       </div>
       <br></br>
       <div>
-        <div className={`text-${currencyRupee ? "red-500" : "black"}`}>
+        <div>
           <button
+            className={`${currencyRupee ? "text-red-500" : "text-black"}`}
             onClick={() => {
               setcurrencyRupee(true);
             }}
@@ -105,8 +108,9 @@ export default function CoinInfo({ state }) {
           </button>
         </div>
 
-        <div className={`text-${currencyRupee ? "black" : "red-500"}`}>
+        <div>
           <button
+            className={`text-${currencyRupee ? "black" : "red-500"}`}
             onClick={() => {
               setcurrencyRupee(false);
             }}
@@ -114,23 +118,25 @@ export default function CoinInfo({ state }) {
             DOLLAR
           </button>
         </div>
-        <div >
-          <button
-            onClick={() => {
-              setcurrencyRupee(false);
+        <div>
+          <Link
+            to={{
+              pathname: "/transaction",
             }}
+            state={{data}}
           >
             BUY
-          </button>
+          </Link>
         </div>
-        <div >
-          <button
-            onClick={() => {
-              setcurrencyRupee(false);
+        <div>
+          <Link
+            to={{
+              pathname: "/transaction",
             }}
+            state={{ data }}
           >
             SELL
-          </button>
+          </Link>
         </div>
       </div>
     </div>

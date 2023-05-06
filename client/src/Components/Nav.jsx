@@ -1,4 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
+
+
 export default function Nav({ open }) {
   const navigate = useNavigate();
   let json;

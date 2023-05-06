@@ -45,7 +45,7 @@ export default function Signup({ closemod }) {
 
   return (
     <div>
-      <div className="w-[100%] fixed top-0 h-screen snap-none  z-100 bg-[#1c1c1cdf]">
+      <div className="w-[100%] fixed top-10 h-screen snap-none  z-100 bg-[#1c1c1cdf]">
         <div className="text-white">
           <button
             onClick={() => {

@@ -53,10 +53,8 @@ export default function LoginModal({ closemod }) {
     return (
       <div>
         <div className="w-[100%] fixed top-0 h-full snap-none z-10  bg-[#1c1c1cdf]">
-          
           {/* background div*/}
           <div className="text-black bg-white rounded-md border-2 border-red-500 w-[50%] m-auto">
-            
             {/* container div*/}
             <button
               onClick={() => {
@@ -149,7 +147,6 @@ export default function LoginModal({ closemod }) {
                   closemod[0](false);
                 }}
               >
-                {" "}
                 already a user
               </button>
             </div>
