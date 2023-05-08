@@ -47,6 +47,13 @@ export default function LoginModal({ closemod }) {
     }
   };
 
+
+  //--------------------------create wallet----------------//
+
+  
+
+  //--------------------------create wallet----------------//
+
   if (loggedin) {
     closemod[0](false);
   } else {

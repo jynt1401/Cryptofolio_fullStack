@@ -1,39 +1,22 @@
 //table
-const mongoose =require('mongoose');
-require('mongoose-type-email');
+const mongoose = require("mongoose");
 
-const userSchema=new mongoose.Schema({
-    first_name:{
-        type:String,
-        require:true,
-        maxlenght:50
-    },
-    last_name:{
-        type:String,
-        require:true,
-        maxlenght:50
-    },
-    age:{
-        type:Number,
-        require:true
-    },
-    mob:{
-        type:Number,
-        require:true
-    },
-    email:{
-        type:String,
-        require:true
-    },
-    password:{
-        type:String,
-        minlenght:5,
-        require:true
-    }
+const subTransaction = new mongoose.Schema({
+  CoinId: { type: String, require: true },
+  Quantity: { type: Number, require: true },
+  Amount: { type: Number, require: true },
+  Prise: { type: Number, require: true },
+  Date: { type: String },
 });
 
+const transactionSchema = new mongoose.Schema({
+  UserId: {
+    type: String,
+    require: true,
+  },
+  Transaction: [subTransaction]
+});
 
 //we have created the table now we will export this table
 
-
-module.exports=mongoose.model('user',userSchema)
+module.exports = mongoose.model("transaction", transactionSchema);

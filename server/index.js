@@ -48,5 +48,9 @@ app.use(express.json());
 app.use("/dashboard", dashboardRouter);
 app.use("/dashboard", require("./Routes/Userdetails"));
 app.use("/dashboard", require("./Routes/ProfileUpdate"));
+
 app.use("/register", require("./Routes/CreatUser"));
 app.use("/register", require("./Routes/Signup"));
+
+app.use("/transactions", require("./Routes/Transactions"));
+app.use("/wallet", require("./Routes/Wallet"));

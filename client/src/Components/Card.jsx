@@ -15,6 +15,7 @@ export default function Card() {
   }, []);
   // console.log(open2[0])
   // console.log(open2[1])
+  console.log(info);
 
   if (info.length === 0) {
     return <div>loading</div>;

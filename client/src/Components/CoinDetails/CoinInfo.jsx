@@ -123,7 +123,7 @@ export default function CoinInfo({ state }) {
             to={{
               pathname: "/transaction",
             }}
-            state={{data}}
+            state={{ data }}
           >
             BUY
           </Link>
