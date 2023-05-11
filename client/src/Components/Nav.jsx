@@ -31,9 +31,9 @@ export default function Nav({ open }) {
  
 
   return (
-    <div className="fixed w-screen">
+    <div className="fixed w-screen z-10">
       <div>
-        <ul className="flex justify-between bg-[#363636] h-[70px] text-white w-[100%] p-5">
+        <ul className="flex justify-between bg-[#131722] h-[70px] text-white w-[100%] p-5">
           <div>
             <li className="text-2xl font-bold  text-white  ">
               <Link to="/">CryptoFolio</Link>

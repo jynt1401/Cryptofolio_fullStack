@@ -73,7 +73,7 @@ export default function CoinInfo({ state }) {
   console.log(Coindata);
 
   return (
-    <div className=" border-2 border-red-500 w-[90%] mx-12 mt-10 mb-10">
+    <div className=" border-2 border-red-500 w-[90%] text-white mx-12 mt-10 mb-10">
       <p>{data.name}</p>
       <div>
         current_price=

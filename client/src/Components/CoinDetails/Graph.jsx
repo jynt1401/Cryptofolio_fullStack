@@ -47,7 +47,7 @@ export default function Details() {
           symbol: "BITSTAMP:" + `${state.value.symbol}` + "USD",
           interval: "D",
           timezone: "Asia/Kolkata",
-          theme: "light",
+          theme: "dark",
           style: "1",
           locale: "in",
           toolbar_bg: "#f1f3f6",
@@ -74,14 +74,14 @@ export default function Details() {
   
 
   return (
-    <div>
+    <div className=" h-content p-5 min-h-screen w-[100%] pt-14 bg-[#171b26]">
       
      
 
       <div className="tradingview-widget-container ">
         <div
           id="tradingview_17e74"
-          className=" h-[500px] w-[90%] mx-12 mt-10"
+          className=" h-[500px] w-[90%] mx-12 pt-10"
           />
       </div>
       <CoinInfo state={state}/>
