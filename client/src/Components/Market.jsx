@@ -83,11 +83,11 @@ export default function Market() {
                     }}
                     state={{ name: `${value.name}`, Symbol: `${value.symbol}` }}
                   > */}
-                    <div className="bg-[#3a3a3a] rounded-md shadow-md p-5 shadow-[#00000030]  m-3 w-[180px] border-t-2 border-[#0000001c]">
+                    <div className="bg-[#1b202d] rounded-md shadow-md p-5 shadow-[#000000be]  m-3 w-[180px] border-t-2 border-[#00000050]">
                       <div className=" mx-auto w-[100px] h-[100px] ">
                         <img src={value.image} alt=""></img>
                       </div>
-                      <div className="p-1 text-center font-medium">
+                      <div className="p-1 text-center text-white font-medium">
                         <h3>Name- {value.name}</h3>
                         <p>Value- {value.current_price}</p>
                         <h3>Up- {value.high_24h}</h3>

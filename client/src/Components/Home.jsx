@@ -42,7 +42,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-[300px] grad_bg blur-[220px]  right-[100px] h-[300px] absolute border-2 rounded-full"></div>
+        <div className="w-[100px] grad_bg blur-[90px]  top-[130px] right-[270px] h-[250px] animate-ping absolute border-2 rounded-full"></div>
 
         <div
           className="  z-10 hidden md:inline-flex mx-auto mt-[110px] sm:mt-[90px] sm:mb-[50px]  md:mt-[120px] md:mb-[110px] lg:mt-[150px] lg:mb-[100px] "
