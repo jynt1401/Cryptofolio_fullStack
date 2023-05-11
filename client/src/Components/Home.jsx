@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="w-screen bg-[#171b26]  h-full md:grid md:grid-cols-2 ">
+      <div className=" bg-[#171b26]  h-full md:grid md:grid-cols-2 ">
         <div className="text-white mx-auto text-center md:text-left md:ml-9 md:pl-9 w-[100%]  pt-[150px] sm:pt-[170px] md:pt-[150px] xl:pt-[200px] py-[20%]">
           <div className=" text-[10px] sm:text-[15px] md:text-[18px] lg:text-[22px] xl:text-[26px]">
             Invest with Confidence
@@ -41,23 +41,26 @@ export default function Home() {
             <Link to="/market">Explore the Market</Link>
           </div>
         </div>
+
+        <div className="w-[300px] grad_bg blur-[220px]  right-[100px] h-[300px] absolute border-2 rounded-full"></div>
+
         <div
-          className=" w-[500px]   hidden md:inline-flex mx-auto mt-[110px] sm:mt-[90px] sm:mb-[50px]  md:mt-[120px] md:mb-[110px] lg:mt-[150px] lg:mb-[100px]  text-white"
-          
-        ><div style={{
-          width: "500px",
-          height: "auto",
-          backgroundImage: `url(${bg})`,
-          // backgroundRepeat: " no-repeat",
-          // // backgroundSize: "cover",
-          // backgroundPosition: "center",
-          // backgroundAttachment: "fixed",
-          // backgroundize: "contains",
-          backgroundRepeat: "no-repeat",
-          // backgroundAttachment: "fixed",
-          // backgroundSize: "cover",
-          backgroundSize: "100% 100%",
-        }}></div></div>
+          className="  z-10 hidden md:inline-flex mx-auto mt-[110px] sm:mt-[90px] sm:mb-[50px]  md:mt-[120px] md:mb-[110px] lg:mt-[150px] lg:mb-[100px] "
+          style={{
+            width: "500px",
+
+            backgroundImage: `url(${bg})`,
+            // backgroundRepeat: " no-repeat",
+            // // backgroundSize: "cover",
+            // backgroundPosition: "center",
+            // backgroundAttachment: "fixed",
+            // backgroundize: "contains",
+            backgroundRepeat: "no-repeat",
+            // backgroundAttachment: "fixed",
+            // backgroundSize: "cover",
+            backgroundSize: "100% 100%",
+          }}
+        ></div>
       </div>
       <List />
       <Footer />

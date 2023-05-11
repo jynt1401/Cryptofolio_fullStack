@@ -21,10 +21,10 @@ export default function Card() {
     return <div>loading</div>;
   } else {
     return (
-      <div className="bg-[#171b26fa]  mx-auto  text-white p-5">
+      <div className="bg-[#171b26fa]  mx-auto  text-white p-7">
         <div className="grid grid-cols-1 sm:grid-cols-2  ">
           <div className="font-bold text-[20px] text-center mx-auto sm:text-left xl:text-[29px] w-[80%] text-white p-4">
-            Explore top Crypto's Like Bitcoin, Ethereum and Dogecoin
+            Explore top Crypto's Like Bitcoin Ethereum and Dogecoin
             <p className=" text-[#c0c0c0]  pt-5 hidden sm:inline-flex font-normal text-[15px] mx-auto  sm:text-[15px] md:text-[15px] lg:text-[15px] xl:text-[15px]">
               buying and selling cryptocurrencies on a cryptocurrency exchange
               or trading platform in order to make a profit from the price
@@ -50,16 +50,15 @@ export default function Card() {
                       }}
                       state={{ value }}
                     >
-                      <div className="rounded-md shadow-md p-5 shadow-[#00000030]  m-3 w-[180px] border-t-2 border-[#0000001c]">
+                      <div className="rounded-md shadow-md p-5 shadow-[#00000066]  m-3 w-[180px] border-t-2 border-[#0000001c]">
                         <div className=" mx-auto w-[100px] h-[100px] ">
                           <img src={value.image} alt=""></img>
                         </div>
                         <div className="p-1 text-center font-medium">
-
-                        <h3>Name- {value.name}</h3>
-                        <p>Value- {value.current_price}</p>
-                        <h3>Up- {value.high_24h}</h3>
-                        <h3>Down- {value.low_24h}</h3>
+                          <h3>Name- {value.name}</h3>
+                          <p>Value- {value.current_price}</p>
+                          <h3>Up- {value.high_24h}</h3>
+                          <h3>Down- {value.low_24h}</h3>
                         </div>
                       </div>
                     </Link>

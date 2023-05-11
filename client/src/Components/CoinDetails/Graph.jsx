@@ -76,12 +76,13 @@ export default function Details() {
   return (
     <div className=" h-content p-5 min-h-screen w-[100%] pt-14 bg-[#171b26]">
       
-     
+      <div className="w-[300px] grad_bg blur-[220px]  right-[90px] h-[300px] absolute border-2 rounded-full"></div>
+
 
       <div className="tradingview-widget-container ">
         <div
           id="tradingview_17e74"
-          className=" h-[500px] w-[90%] mx-12 pt-10"
+          className=" h-[500px] w-[90%] mx-auto pt-10"
           />
       </div>
       <CoinInfo state={state}/>

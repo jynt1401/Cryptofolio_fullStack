@@ -31,7 +31,7 @@ export default function Nav({ open }) {
  
 
   return (
-    <div className="fixed w-screen z-10">
+    <div className="fixed w-screen z-30">
       <div>
         <ul className="flex justify-between bg-[#131722] h-[70px] text-white w-[100%] p-5">
           <div>

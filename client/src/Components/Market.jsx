@@ -46,8 +46,10 @@ export default function Market() {
   console.log(filtered);
 
   return (
-    <div className="pt-[100px] bg-[#303030] ">
-      <div className=" p-7 w-[70%] sticky top-[70px]  mx-auto text-center bg-[#353535]">
+    <div className="pt-[100px] bg-[#171b26] ">
+      <div className="w-[100px] grad_bg blur-[220px]  right-[10px] h-[100px] absolute border-2 rounded-full"></div>
+
+      <div className="  p-7 w-[70%] sticky top-[70px] bg-[#1b202d] mx-auto text-center ">
         <div className="">
           <input
             id="searchInput"
@@ -61,7 +63,7 @@ export default function Market() {
           />
         </div>
       </div>
-      <div className="w-[70%] mx-auto min-h-screen bg-[#353535] p-6 items-center">
+      <div className="w-[70%] mx-auto min-h-screen bg-[#1b202d] p-6 items-center">
         <div className="">
           <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto ">
             {filtered.map((value, key) => {
