@@ -5,8 +5,10 @@ import ProfileImage from "../Cards/ProfileImage";
 export default function InfoCard({ info }) {
     console.log(info)
   return (
-    <div>
-      <div>
+    <div className="pt-[100px]">
+       <ProfileImage img={info.url[0].url} />
+      <div className="text-black">
+
         {info.data.first_name}
 
         {info.data.last_name}
@@ -18,7 +20,7 @@ export default function InfoCard({ info }) {
          className="w-[200px] h-[200px] m-auto  bg-cover"
          style={{ backgroundImage: `url(${userdata.userProfile[0].url})` }}
           ></div> */}
-        <ProfileImage img={info.url[0].url} />
+       
       </div>
     </div>
   );

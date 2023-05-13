@@ -26,6 +26,8 @@ mongoose
   .connect(Connection_url, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(PORT, () => console.log(`runnging ${PORT}`)))
   .catch((error) => console.log(error.message));
+
+mongoose.set("strictQuery", true);
 mongoose.set("strictQuery", true);
 
 //---------------mongoose connection----------------//

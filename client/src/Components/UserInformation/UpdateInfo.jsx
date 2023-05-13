@@ -87,7 +87,7 @@ export default function UpdateInfo() {
   console.log(userdata.userProfile);
   console.log(url);
   return (
-    <div>
+    <div className="pt-[100px]">
       
       <div>
         

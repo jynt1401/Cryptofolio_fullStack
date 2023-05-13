@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function CoinSell() {
   const { state } = useLocation();
+  const navigate = useNavigate();
 
   console.log("hello");
   // console.log(state.data);
@@ -14,6 +15,27 @@ export default function CoinSell() {
   useEffect(() => {
     setdata(state.data);
   }, [data]);
+
+  const [id, setid] = useState();
+  const getid=async()=>{
+    const response = await fetch("http://localhost:3001/dashboard/dashboard", {
+      method: "POST",
+      body: JSON.stringify({ Token: localStorage.authToken }),
+      mode: "cors",
+      headers: {
+        "Content-type": "application/json",
+      },
+
+      header: "Access-Control-Allow-Origin: *",
+    });
+    let json = await response.json();
+    console.log("response we get");
+    console.log(json);
+    setid(json.id);
+  }
+  // useEffect(async () => {
+  //   getid();
+  // }, []);
 
   useEffect(() => {
     setcurrprise(
@@ -36,6 +58,7 @@ export default function CoinSell() {
   const [allTransaction, setallTransaction] = useState([]);
   useEffect(() => {
     getallTransaction();
+    getid();
   }, []);
   const getallTransaction = async () => {
     await axios({
@@ -117,6 +140,9 @@ export default function CoinSell() {
         if (res.data === "NO") {
           alert("not enough balance");
         }
+        if (res.data === "YES") {
+          navigate("/dashboard", { state: { id: id } });
+        }
       });
     }
   };
@@ -145,6 +171,9 @@ export default function CoinSell() {
       console.log(res.data);
       if (res.data === "NO") {
         alert("not enough balance");
+      }
+      if (res.data === "YES") {
+        navigate("/dashboard", { state: { id: id } });
       }
     });
   };
@@ -205,46 +234,91 @@ export default function CoinSell() {
   //----------------input value amount --------------//
 
   return (
-    <div className="pt-[200px] text-black">
-      <div className=" w-[100px] h-[100px] ">
-        <img src={data?.image} alt=""></img>
-      </div>
-      <div>{data?.name}</div>
-      <div>{currprise}</div>
-      <div>
-        <div className="border-2">
-          <div>Buy by qantity</div>
-          <label for="">Quantity</label>
-          <input
-            type="text"
-            id=""
-            name=""
-            value={Quantity}
-            onChange={onchangeQuantity}
-            className="text-black"
-            placeholder="enter quantity "
-          />
-          <div>
-            <p>amount: {Amount}</p>
-          </div>
-          <button onClick={getusertransaction_byQuantity}>Buy</button>
+    <div className="m-5 ">
+      {/* <div className="w-[300px] z-10 grad_bg blur-[220px]  right-[90px] h-[300px] absolute border-2 rounded-full"></div> */}
+
+      <div className=" z-30 w-[80%] mx-auto p-5 bg-[#1d2230] rounded-md">
+        <div className="font-bold text-white text-center text-[20px] md:text-[22px] mb-12">
+          Confirm Payment
         </div>
-        <div className="border-2">
-          <div>Buy by Amount</div>
-          <label for="">Amount</label>
-          <input
-            type="Number"
-            id=""
-            name=""
-            value={Amount_for_amount}
-            onChange={onchangeAmount}
-            className="text-black"
-            placeholder="enter amount "
-          />
-          <div>
-            <p>quantity: {Quantity_for_amount}</p>
+        <div className=" m-5 grid grid-cols-1 md:grid-cols-2  ">
+          <div className="p-3 mx-auto bg-[#171b26] rounded-lg text-white pt-6 md:mr-4 mb-4 md:w-[80%]">
+            <div className="font-semibold text-white text-center text-[18px] md:text-[20px] mb-4">
+              {data?.name}
+            </div>
+            <div className=" w-[100px] h-[100px] mx-auto ">
+              <img src={data?.image} alt=""></img>
+            </div>
+            <div className="font-semibold text-white text-center text-[16px] md:text-[18px] m-4">
+              Current Prise: {currprise}
+            </div>
           </div>
-          <button onClick={getusertransaction_byAmount}>Buy</button>
+
+          <div className=" grid grid-cols-1 md:grid-cols-2 md:space-x-3 ">
+            <div className="p-3 mb-4 mx-auto bg-[#171b26] rounded-lg text-white pt-6">
+              <div className="text-center font-medium mb-5 text-[17px]">
+                Buy by Qantity
+              </div>
+              <div className="grid grid-cols-1  m-3">
+                <label for="" className="font-medium ">
+                  Quantity
+                </label>
+                <input
+                  type="text"
+                  id=""
+                  name=""
+                  value={Quantity}
+                  onChange={onchangeQuantity}
+                  className="text-black p-[1px] m-2 text-center"
+                  placeholder="enter quantity "
+                />
+              </div>
+              <div className="grid grid-cols-1  m-3">
+                <div className="font-medium ">Amount: </div>
+                <div className="">{Amount}</div>
+              </div>
+              <button
+                onClick={getusertransaction_byQuantity}
+                className="bg-[#209fe4]  w-[100%]
+               p-1 mt-6  rounded-md font-semibold text-[12px] md:text-[15px] mb-4"
+              >
+                Buy
+              </button>
+            </div>
+
+            <div className="p-3 mb-4 mx-auto bg-[#171b26] rounded-lg text-white pt-6">
+              <div className="text-center font-medium text-[17px]">
+                Buy by Amount
+              </div>
+              <div className="grid grid-cols-1  m-3">
+                <label for="" className="font-medium ">
+                  Amount
+                </label>
+                <input
+                  type="Number"
+                  id=""
+                  name=""
+                  value={Amount_for_amount}
+                  onChange={onchangeAmount}
+                  className="text-black p-[1px] m-2 text-center"
+                  placeholder="enter amount "
+                />
+              </div>
+              <div className="grid grid-cols-1 m-3 md:mt-7">
+                <div className="font-medium ">Quantity: </div>
+                <div className="text-[13px] md:text-[17px]">
+                  {Quantity_for_amount}
+                </div>
+              </div>
+              <button
+                onClick={getusertransaction_byAmount}
+                className="bg-[#209fe4]  w-[100%]
+               p-1 mt-4  rounded-md font-semibold text-[12px] md:text-[15px]"
+              >
+                Buy
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

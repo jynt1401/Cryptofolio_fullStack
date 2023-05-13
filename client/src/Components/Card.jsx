@@ -21,7 +21,7 @@ export default function Card() {
     return <div>loading</div>;
   } else {
     return (
-      <div className="bg-[#171b26fa]  mx-auto  text-white p-7">
+      <div className="bg-[#1d2230]   mx-auto  text-white p-7">
         <div className="grid grid-cols-1 sm:grid-cols-2  ">
           <div className="font-bold text-[20px] text-center mx-auto sm:text-left xl:text-[29px] w-[80%] text-white p-4">
             Explore top Crypto's Like Bitcoin Ethereum and Dogecoin

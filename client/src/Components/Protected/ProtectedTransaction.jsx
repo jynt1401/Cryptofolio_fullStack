@@ -13,7 +13,7 @@ export default function ProtectedTransaction({ open }) {
     }
   });
   return (
-    <div className="bg-red-500 h-screen">
+    <div className="pt-[100px] md:pt-[200px] pb-10 md:pb-[107px] text-black bg-[#171b26] h-[100%]">
       <CoinSell />
     </div>
   );
