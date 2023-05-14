@@ -108,7 +108,9 @@ export default function CoinSell() {
       await getamount();
 
       let object = {
+        img:state.data.image,
         CoinId: state.data.id,
+        CoinName: state.data.name,
         Quantity: Quantity,
         Amount: (`${state.data.current_price}` / 100) * 70 * Quantity,
         Date: new Date(),
@@ -141,17 +143,33 @@ export default function CoinSell() {
           alert("not enough balance");
         }
         if (res.data === "YES") {
-          navigate("/dashboard", { state: { id: id } });
+          fun();
+          // navigate("/market");
         }
       });
     }
   };
+  const fun=()=>{
+    window.history.go(-1);
+  }
 
   const getusertransaction_byAmount = async () => {
     await getamount();
 
     console.log((`${state.data.current_price}` / 100) * 70 * Quantity);
     console.log(currBalance);
+
+    let object = {
+      img:state.data.image,
+      CoinId: state.data.id,
+      CoinName: state.data.name,
+      Quantity:  Amount_for_amount / ((`${state.data.current_price}` / 100) * 70),
+      Amount: Amount_for_amount,
+      Date: new Date(),
+      Prise: (`${state.data.current_price}` / 100) * 70,
+    };
+
+    allTransaction.push(object);
 
     const response = await axios({
       method: "POST",
@@ -162,6 +180,7 @@ export default function CoinSell() {
         Amount: Amount_for_amount,
         login: login,
         CoinName: data.name,
+        Transaction: allTransaction,
       },
       headers: {
         "Content-type": "application/json",
@@ -173,7 +192,8 @@ export default function CoinSell() {
         alert("not enough balance");
       }
       if (res.data === "YES") {
-        navigate("/dashboard", { state: { id: id } });
+        fun();
+        // navigate("/market");
       }
     });
   };

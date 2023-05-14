@@ -15,6 +15,10 @@ import CoinSell from "./Components/Transactions/CoinSell";
 function App() {
   const [open, setOpen] = useState(false);
   const [opensign, setOpensign] = useState(false);
+
+
+
+  
   return (
     <Router>
       {open && <LoginModal closemod={[setOpen, setOpensign]} />}
