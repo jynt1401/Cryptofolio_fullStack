@@ -63,7 +63,7 @@ export default function Home() {
         ></div>
       </div>
       <List />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

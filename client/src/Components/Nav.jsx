@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 
-
 export default function Nav({ open }) {
   const navigate = useNavigate();
   let json;
@@ -28,21 +27,20 @@ export default function Nav({ open }) {
     navigate("/");
     console.log("loggedout");
   };
- 
 
   return (
     <div className="fixed w-screen z-30">
       <div>
         <ul className="flex justify-between bg-[#131722] h-[70px] text-white w-[100%] p-5">
           <div>
-            <li className="text-2xl font-bold  text-white  ">
+            <li className="text-[15px] sm:text-[18px] md:text-2xl font-bold  text-white  ">
               <Link to="/">CryptoFolio</Link>
             </li>
           </div>
           <div className="text-[20px] font-bold  text-white ">
             {!localStorage.getItem("authToken") ? (
               <div className=" flex">
-                <li className="mx-2">
+                <li className="mx-2 text-[15px] sm:text-[18px] md:text-xl">
                   <button
                     onClick={() => {
                       open[0](true);
@@ -51,7 +49,7 @@ export default function Nav({ open }) {
                     SignIn
                   </button>
                 </li>
-                <li className="mx-2">
+                <li className="mx-2 text-[15px] sm:text-[18px] md:text-xl">
                   <button
                     onClick={() => {
                       open[1](true);
@@ -62,14 +60,13 @@ export default function Nav({ open }) {
                 </li>
               </div>
             ) : (
-              <div className=" flex">
+              <div className=" flex text-[15px] sm:text-[18px] md:text-xl">
                 <li className="mx-2">
                   <button onClick={handleDashboard}>Dashboard</button>
                 </li>
                 <li className="mx-2">
                   <button onClick={handlelogout}>SignOut</button>
                 </li>
-               
               </div>
             )}
           </div>
