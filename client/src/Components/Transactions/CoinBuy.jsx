@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-export default function CoinSell() {
+export default function CoinBuy() {
   const { state } = useLocation();
   const navigate = useNavigate();
 
@@ -101,7 +101,7 @@ export default function CoinSell() {
 
   const getusertransaction_byQuantity = async () => {
     if (Number(Quantity) <= 0) {
-      alert("enter Quantity");
+      alert("enter amount");
     } else {
       console.log("HIIIIII");
 
@@ -115,7 +115,7 @@ export default function CoinSell() {
         Amount: (`${state.data.current_price}` / 100) * 70 * Quantity,
         Date: new Date(),
         Prise: (`${state.data.current_price}` / 100) * 70,
-        type: "Sell",
+        type: "Buy",
       };
 
       allTransaction.push(object);
@@ -126,7 +126,7 @@ export default function CoinSell() {
 
       const response = await axios({
         method: "POST",
-        url: "http://localhost:3001/transactions/selltransactions",
+        url: "http://localhost:3001/transactions/transactions",
         data: {
           Quantity: Quantity,
           Amount: (`${state.data.current_price}` / 100) * 70 * Quantity,
@@ -141,7 +141,7 @@ export default function CoinSell() {
         console.log("response heuhfiehfal--------------------");
         console.log(res.data);
         if (res.data === "NO") {
-          alert("not enough Quantity");
+          alert("not enough balance");
         }
         if (res.data === "YES") {
           fun();
@@ -155,56 +155,50 @@ export default function CoinSell() {
   };
 
   const getusertransaction_byAmount = async () => {
-    if (Number(Amount_for_amount) <= 0) {
-      alert("enter amount");
-    }
-    else{
+    await getamount();
 
-      await getamount();
-  
-      console.log((`${state.data.current_price}` / 100) * 70 * Quantity);
-      console.log(currBalance);
-  
-      let object = {
-        img: state.data.image,
-        CoinId: state.data.id,
-        CoinName: state.data.name,
+    console.log((`${state.data.current_price}` / 100) * 70 * Quantity);
+    console.log(currBalance);
+
+    let object = {
+      img: state.data.image,
+      CoinId: state.data.id,
+      CoinName: state.data.name,
+      Quantity:
+        Amount_for_amount / ((`${state.data.current_price}` / 100) * 70),
+      Amount: Amount_for_amount,
+      Date: new Date(),
+      Prise: (`${state.data.current_price}` / 100) * 70,
+      type: "Buy",
+    };
+
+    allTransaction.push(object);
+
+    const response = await axios({
+      method: "POST",
+      url: "http://localhost:3001/transactions/transactions",
+      data: {
         Quantity:
           Amount_for_amount / ((`${state.data.current_price}` / 100) * 70),
         Amount: Amount_for_amount,
-        Date: new Date(),
-        Prise: (`${state.data.current_price}` / 100) * 70,
-        type: "Sell",
-      };
-  
-      allTransaction.push(object);
-  
-      const response = await axios({
-        method: "POST",
-        url: "http://localhost:3001/transactions/selltransactions",
-        data: {
-          Quantity:
-            Amount_for_amount / ((`${state.data.current_price}` / 100) * 70),
-          Amount: Amount_for_amount,
-          login: login,
-          CoinName: data.name,
-          Transaction: allTransaction,
-        },
-        headers: {
-          "Content-type": "application/json",
-        },
-      }).then((res) => {
-        console.log("response");
-        console.log(res.data);
-        if (res.data === "NO") {
-          alert("not enough Quantity");
-        }
-        if (res.data === "YES") {
-          fun();
-          // navigate("/market");
-        }
-      });
-    }
+        login: login,
+        CoinName: data.name,
+        Transaction: allTransaction,
+      },
+      headers: {
+        "Content-type": "application/json",
+      },
+    }).then((res) => {
+      console.log("response");
+      console.log(res.data);
+      if (res.data === "NO") {
+        alert("not enough balance");
+      }
+      if (res.data === "YES") {
+        fun();
+        // navigate("/market");
+      }
+    });
   };
 
   //-----------------transactions--------------------//
@@ -311,7 +305,7 @@ export default function CoinSell() {
                 className="bg-[#209fe4]  w-[100%]
                p-1 mt-6  rounded-md font-semibold text-[12px] md:text-[15px] mb-4"
               >
-                Sell
+                Buy
               </button>
             </div>
 
@@ -344,7 +338,7 @@ export default function CoinSell() {
                 className="bg-[#209fe4]  w-[100%]
                p-1 mt-1  rounded-md font-semibold text-[12px] md:text-[15px]"
               >
-                Sell
+                Buy
               </button>
             </div>
           </div>

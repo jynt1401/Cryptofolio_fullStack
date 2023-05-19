@@ -157,14 +157,14 @@ export default function CoinInfo({ state }) {
           </Link>
         </div>
         <div className=" w-[100px] mx-auto text-center  p-2 m-2 rounded-md bg-[#c12f3d] text-white  text-[14px] md:text-[18px] font-semibold hover:translate-y-[-6px]">
-          <div
-            // to={{
-              // pathname: "/transaction",
-            // }}
-            // state={{ data }}
+          <Link
+            to={{
+              pathname: "/transactionSell",
+            }}
+            state={{ data }}
           >
             SELL
-          </div>
+          </Link>
         </div>
       </div>
     </div>

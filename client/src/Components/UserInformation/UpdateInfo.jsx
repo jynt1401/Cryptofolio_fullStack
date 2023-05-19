@@ -50,7 +50,7 @@ export default function UpdateInfo() {
         const json = await response.json();
         console.log("response we get from profileupdate");
         console.log(json);
-        navigate("/dashboard", { state: { id:userid } });
+        navigate("/dashboard", { state: { id: userid } });
       })
 
       .catch((err) => console.log(err));
@@ -87,19 +87,30 @@ export default function UpdateInfo() {
   console.log(userdata.userProfile);
   console.log(url);
   return (
-    <div className="pt-[100px]">
-      
-      <div>
-        
-        <input
-          type="file"
-          onChange={(e) => setImage(e.target.files[0])}
-        ></input>
-        {image ? <button onClick={uploadImage}>Upload</button> : <div></div>}
-      </div>
-      <div>
-        <h1>Uploaded image will be displayed here</h1>
-        <img src={url} />
+    <div className="bg-[#171b26] h-screen pt-[100px] ">
+      <div className="mx-auto mt-[150px] w-[70%] md:w-[50%] bg-[#272e41] rounded-lg p-5 ">
+        <div className=" mx-auto">
+          <div className="sm:w-[30%] mx-auto font-semibold">
+            <input
+              type="file"
+              onChange={(e) => setImage(e.target.files[0])}
+            ></input>
+          </div>
+          <div className="text-center m-5 text-[#090e1e]">
+           
+            {image ? (
+              <button
+                onClick={uploadImage}
+                className="bg-[#209fe4] w-[100%] md:w-[30%]
+             p-1 mt-6  rounded-md font-semibold text-[12px] md:text-[15px] mb-4"
+              >
+                Upload
+              </button>
+            ) : (
+              <div></div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ const subTransaction = new mongoose.Schema({
   Amount: { type: Number, require: true },
   Prise: { type: Number, require: true },
   Date: { type: String },
+  type: { type: String },
 });
 
 const transactionSchema = new mongoose.Schema({

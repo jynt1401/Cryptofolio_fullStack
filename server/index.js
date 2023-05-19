@@ -55,4 +55,5 @@ app.use("/register", require("./Routes/CreatUser"));
 app.use("/register", require("./Routes/Signup"));
 
 app.use("/transactions", require("./Routes/Transactions"));
+app.use("/transactions", require("./Routes/Transactions"));
 app.use("/wallet", require("./Routes/Wallet"));

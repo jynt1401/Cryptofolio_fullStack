@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
-import CoinSell from "../Transactions/CoinSell";
+import CoinBuy from "../Transactions/CoinBuy";
 
-export default function ProtectedTransaction({ open }) {
+export default function ProtectedBuyTransaction({ open }) {
   console.log(open);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export default function ProtectedTransaction({ open }) {
   });
   return (
     <div className="pt-[100px] md:pt-[200px] pb-10 md:pb-[107px] text-black bg-[#171b26] h-[100%]">
-      <CoinSell />
+      <CoinBuy />
     </div>
   );
 }

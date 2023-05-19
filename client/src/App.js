@@ -9,16 +9,14 @@ import Dashboard from "./Components/UserInformation/Dashboard";
 import Nav from "./Components/Nav";
 import Signup from "./Components/Signup";
 import UpdateInfo from "./Components/UserInformation/UpdateInfo";
-import ProtectedTransaction from "./Components/Protected/ProtectedTransaction";
-import CoinSell from "./Components/Transactions/CoinSell";
+import ProtectedBuyTransaction from "./Components/Protected/ProtectedBuyTransaction";
+import ProtectedSellTransaction from "./Components/Protected/ProtectedSellTransaction"
 
 function App() {
   const [open, setOpen] = useState(false);
+
   const [opensign, setOpensign] = useState(false);
 
-
-
-  
   return (
     <Router>
       {open && <LoginModal closemod={[setOpen, setOpensign]} />}
@@ -33,7 +31,12 @@ function App() {
           <Route
             exact
             path="/transaction"
-            element={<ProtectedTransaction open={[setOpen, setOpensign]} />}
+            element={<ProtectedBuyTransaction open={[setOpen, setOpensign]} />}
+          />
+          <Route
+            exact
+            path="/transactionSell"
+            element={<ProtectedSellTransaction open={[setOpen, setOpensign]} />}
           />
           <Route exact path="/coin" element={<Details />} />
           <Route exact path="/market" element={<Buy />} />
