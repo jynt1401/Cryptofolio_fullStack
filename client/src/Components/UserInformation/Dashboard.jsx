@@ -171,7 +171,7 @@ export default function Dashboard() {
                p-1 mt-2  rounded-md font-semibold text-[12px] md:text-[15px] mb-4"
                   onClick={handleupdate}
                 >
-                  update informations
+                  update Profile
                 </button>
               </div>
             </div>
