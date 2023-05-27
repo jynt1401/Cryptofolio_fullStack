@@ -14,7 +14,7 @@ export default function Signup({ closemod }) {
       email: credentials.email,
       password: credentials.password,
     };
-    const response = await fetch("http://localhost:3001/register/Signup", {
+    const response = await fetch("https://cryptofolio-backstack-aiwo.onrender.com/register/Signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
