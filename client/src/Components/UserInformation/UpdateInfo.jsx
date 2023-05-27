@@ -33,7 +33,7 @@ export default function UpdateInfo() {
         setUrl(data.url);
         console.log(url);
         const response = await fetch(
-          "http://localhost:3001/dashboard/profileupdate",
+          "https://cryptofolio-backstack-aiwo.onrender.com/dashboard/profileupdate",
           {
             method: "POST",
             body: JSON.stringify({ UserId: userid, ProfileUrl: data.url }),
@@ -61,7 +61,7 @@ export default function UpdateInfo() {
   useEffect(() => {
     const fetchuserdata = async () => {
       const response = await fetch(
-        "http://localhost:3001/dashboard/userdetails",
+        "https://cryptofolio-backstack-aiwo.onrender.com/dashboard/userdetails",
         {
           method: "POST",
           body: JSON.stringify({ UserId: userid }),
@@ -97,7 +97,6 @@ export default function UpdateInfo() {
             ></input>
           </div>
           <div className="text-center m-5 text-[#090e1e]">
-           
             {image ? (
               <button
                 onClick={uploadImage}
