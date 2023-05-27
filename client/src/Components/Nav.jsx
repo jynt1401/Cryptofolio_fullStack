@@ -6,7 +6,7 @@ export default function Nav({ open }) {
 
   const handleDashboard = async () => {
     console.log(localStorage.authToken);
-    const response = await fetch("http://localhost:3001/dashboard/dashboard", {
+    const response = await fetch("https://cryptofolio-backstack-aiwo.onrender.com/dashboard/dashboard", {
       method: "POST",
       body: JSON.stringify({ Token: localStorage.authToken }),
       mode: "cors",
