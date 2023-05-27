@@ -9,7 +9,7 @@ import CoinInfo from "./CoinInfo";
 
 let tvScriptLoadingPromise;
 
-export default function Details() {
+export default function Details({ open }) {
   const { state } = useLocation();
   console.log(state);
   //-------------------------------------chart---------------------------------------
@@ -85,7 +85,7 @@ export default function Details() {
           className=" h-[500px] w-[90%] mx-auto pt-10"
           />
       </div>
-      <CoinInfo state={state}/>
+      <CoinInfo state={state} open={ open }/>
           
     </div>
   );

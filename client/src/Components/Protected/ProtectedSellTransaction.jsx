@@ -10,6 +10,7 @@ export default function ProtectedSellTransaction({ open }) {
     console.log(login);
     if (!login) {
       open[1](true);
+      
     }
   });
   return (

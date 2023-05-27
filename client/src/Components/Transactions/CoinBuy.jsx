@@ -57,8 +57,14 @@ export default function CoinBuy() {
 
   const [allTransaction, setallTransaction] = useState([]);
   useEffect(() => {
-    getallTransaction();
-    getid();
+    if(login){
+
+      getallTransaction();
+      getid();
+    }
+    else{
+      
+    }
   }, []);
   const getallTransaction = async () => {
     await axios({

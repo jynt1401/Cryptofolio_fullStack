@@ -38,7 +38,7 @@ function App() {
             path="/transactionSell"
             element={<ProtectedSellTransaction open={[setOpen, setOpensign]} />}
           />
-          <Route exact path="/coin" element={<Details />} />
+          <Route exact path="/coin" element={<Details open={[setOpen, setOpensign]}/>} />
           <Route exact path="/market" element={<Buy />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/profileUpdate" element={<UpdateInfo />} />

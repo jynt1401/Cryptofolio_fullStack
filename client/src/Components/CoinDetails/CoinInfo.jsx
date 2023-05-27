@@ -1,12 +1,46 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function CoinInfo({ state }) {
+export default function CoinInfo({ state, open }) {
   const navigate = useNavigate();
   const data = state.value;
   console.log(data);
   const [Coindata, setCoindata] = useState({});
   const [currencyRupee, setcurrencyRupee] = useState(true);
+  const [clicked, setclicked] = useState(false);
+
+  const login = localStorage.getItem("authToken");
+
+  const check = () => {
+    console.log("------------------------------------");
+    console.log(clicked);
+    console.log(login);
+    if (login && clicked) {
+      navigate("/transaction", { state: { data } });
+    }
+  };
+
+  const handlebuy = () => {
+    setclicked(true);
+    if (login) {
+      navigate("/transaction", { state: { data } });
+      console.log(login);
+    } else {
+      open[1](true);
+    }
+    
+  };
+
+  const handlesell = () => {
+    setclicked(true);
+    if (login) {
+      navigate("/transactionSell", { state: { data } });
+      console.log(login);
+    } else {
+      open[1](true);
+    }
+    
+  };
 
   useEffect(() => {
     if (currencyRupee === true) {
@@ -67,7 +101,9 @@ export default function CoinInfo({ state }) {
         pricePercentageChange: `${data.price_change_percentage_24h}`,
       });
     }
-  }, [currencyRupee]);
+    check();
+    
+  }, [currencyRupee,login]);
 
   console.log(currencyRupee);
   console.log(Coindata);
@@ -147,24 +183,11 @@ export default function CoinInfo({ state }) {
 
       <div className="w-[50%] mt-5 mx-auto grid grid-cols-1 sm:grid-cols-2 ">
         <div className=" w-[100px] mx-auto text-center p-2 m-2 rounded-md  bg-[#26a69a] text-white   text-[14px] md:text-[18px] font-semibold hover:translate-y-[-6px]">
-          <Link
-            to={{
-              pathname: "/transaction",
-            }}
-            state={{ data }}
-          >
-            BUY
-          </Link>
+          <button onClick={handlebuy}>BUY</button>
         </div>
+
         <div className=" w-[100px] mx-auto text-center  p-2 m-2 rounded-md bg-[#c12f3d] text-white  text-[14px] md:text-[18px] font-semibold hover:translate-y-[-6px]">
-          <Link
-            to={{
-              pathname: "/transactionSell",
-            }}
-            state={{ data }}
-          >
-            SELL
-          </Link>
+          <button onClick={handlesell}>SELL</button>
         </div>
       </div>
     </div>

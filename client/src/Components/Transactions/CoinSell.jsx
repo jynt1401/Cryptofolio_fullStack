@@ -155,55 +155,57 @@ export default function CoinSell() {
   };
 
   const getusertransaction_byAmount = async () => {
-    if (Number(Amount_for_amount) <= 0) {
-      alert("enter amount");
-    }
-    else{
+    const login = localStorage.getItem("authToken");
+    console.log(login);
+    if (login) {
+      if (Number(Amount_for_amount) <= 0) {
+        alert("enter amount");
+      } else {
+        await getamount();
 
-      await getamount();
-  
-      console.log((`${state.data.current_price}` / 100) * 70 * Quantity);
-      console.log(currBalance);
-  
-      let object = {
-        img: state.data.image,
-        CoinId: state.data.id,
-        CoinName: state.data.name,
-        Quantity:
-          Amount_for_amount / ((`${state.data.current_price}` / 100) * 70),
-        Amount: Amount_for_amount,
-        Date: new Date(),
-        Prise: (`${state.data.current_price}` / 100) * 70,
-        type: "Sell",
-      };
-  
-      allTransaction.push(object);
-  
-      const response = await axios({
-        method: "POST",
-        url: "http://localhost:3001/transactions/selltransactions",
-        data: {
+        console.log((`${state.data.current_price}` / 100) * 70 * Quantity);
+        console.log(currBalance);
+
+        let object = {
+          img: state.data.image,
+          CoinId: state.data.id,
+          CoinName: state.data.name,
           Quantity:
             Amount_for_amount / ((`${state.data.current_price}` / 100) * 70),
           Amount: Amount_for_amount,
-          login: login,
-          CoinName: data.name,
-          Transaction: allTransaction,
-        },
-        headers: {
-          "Content-type": "application/json",
-        },
-      }).then((res) => {
-        console.log("response");
-        console.log(res.data);
-        if (res.data === "NO") {
-          alert("not enough Quantity");
-        }
-        if (res.data === "YES") {
-          fun();
-          // navigate("/market");
-        }
-      });
+          Date: new Date(),
+          Prise: (`${state.data.current_price}` / 100) * 70,
+          type: "Sell",
+        };
+
+        allTransaction.push(object);
+
+        const response = await axios({
+          method: "POST",
+          url: "http://localhost:3001/transactions/selltransactions",
+          data: {
+            Quantity:
+              Amount_for_amount / ((`${state.data.current_price}` / 100) * 70),
+            Amount: Amount_for_amount,
+            login: login,
+            CoinName: data.name,
+            Transaction: allTransaction,
+          },
+          headers: {
+            "Content-type": "application/json",
+          },
+        }).then((res) => {
+          console.log("response");
+          console.log(res.data);
+          if (res.data === "NO") {
+            alert("not enough Quantity");
+          }
+          if (res.data === "YES") {
+            fun();
+            // navigate("/market");
+          }
+        });
+      }
     }
   };
 

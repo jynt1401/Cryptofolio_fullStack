@@ -33,7 +33,7 @@ const UserTransactions = async (req, res) => {
     await Wallet.findOneAndUpdate(
       { UserId: data.user.id },
       {
-        Invested: invested + req.body.Amount,
+        Invested: Number(invested) + Number(req.body.Amount),
         Amount: Number(amount) - Number(req.body.Amount),
       }
     ).then(async (data) => {

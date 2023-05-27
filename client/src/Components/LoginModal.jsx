@@ -35,7 +35,8 @@ export default function LoginModal({ closemod }) {
 
     if (json.userexist) {
       alert("user already exist");
-    } else {
+    } 
+    else {
       if (!json.success) {
         alert("enter correct credentials");
       } else {
