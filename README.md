@@ -24,31 +24,31 @@ Enjoy a clean and intuitive interface that allows for easy navigation and seamle
 ## Installation
 Clone the repository:
 
-```bash
+```render-babel
 
 
 git clone [https://github.com/your-username/virtual-cryptotrading-react-app](https://github.com/jynt1401/Cryptofolio_fullStack.git).git
 ```
-```nodejs
+```render-babel
 Navigate to the project directory:
 
 
 cd virtual-cryptotrading-react-app
 ```
-```nodejs
+```render-babel
 Install dependencies:
 
 
 npm install
 ```
-```nodejs
+```render-babel
 Start the development server:
 
 npm start
 ```
 Open your browser and visit http://localhost:3000 to access the app.
 
-Technologies Used
+## Technologies Used
 React: A JavaScript library for building user interfaces.
 
 Redux: A predictable state container for managing application state.
