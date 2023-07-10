@@ -5,7 +5,7 @@ Website:-https://fd0092d9.mobsted.com/pwa/?appid=16
 
 Welcome to the Virtual CryptoTrading React App! This project aims to provide a realistic and interactive virtual cryptocurrency trading experience for users. With this app, users can simulate buying and selling cryptocurrencies, track their portfolio performance, and learn about the dynamics of the cryptocurrency market.
 
-Features
+##Features
 Real-time Market Data: Stay updated with real-time cryptocurrency prices and market trends, ensuring a realistic trading experience.
 
 Portfolio Management: Create and manage a virtual portfolio of cryptocurrencies, monitor their performance, and track your gains and losses.
@@ -16,26 +16,34 @@ Historical Data: Explore historical price charts and analyze cryptocurrency perf
 
 User-Friendly Interface: Enjoy a clean and intuitive interface that allows for easy navigation and seamless user experience.
 
-Installation
+##Installation
 Clone the repository:
 
-bash
+```bash
+
 Copy code
 git clone [https://github.com/your-username/virtual-cryptotrading-react-app](https://github.com/jynt1401/Cryptofolio_fullStack.git).git
+```
+```bash
 Navigate to the project directory:
 
 arduino
 Copy code
 cd virtual-cryptotrading-react-app
+```
+```bash
 Install dependencies:
 
 Copy code
 npm install
+```
+```bash
 Start the development server:
 
 sql
 Copy code
 npm start
+```
 Open your browser and visit http://localhost:3000 to access the app.
 
 Technologies Used
