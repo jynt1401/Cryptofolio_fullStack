@@ -24,24 +24,24 @@ Enjoy a clean and intuitive interface that allows for easy navigation and seamle
 ## Installation
 Clone the repository:
 
-```render-babel
+```markdown
 
 
 git clone [https://github.com/your-username/virtual-cryptotrading-react-app](https://github.com/jynt1401/Cryptofolio_fullStack.git).git
 ```
-```render-babel
+```markdown
 Navigate to the project directory:
 
 
 cd virtual-cryptotrading-react-app
 ```
-```render-babel
+```markdown
 Install dependencies:
 
 
 npm install
 ```
-```render-babel
+```markdown
 Start the development server:
 
 npm start
