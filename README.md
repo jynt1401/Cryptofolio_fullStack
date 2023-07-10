@@ -30,8 +30,8 @@ Clone the repository:
 
 git clone https://github.com/jynt1401/Cryptofolio_fullStack.git
 ```
-```markdown
 Navigate to the project directory:
+```markdown
 
 
 cd virtual-cryptotrading-react-app
@@ -52,11 +52,10 @@ Open your browser and visit http://localhost:3000 to access the app.
 ## Technologies Used
 React: A JavaScript library for building user interfaces.
 
-Redux: A predictable state container for managing application state.
 
 React Router: A library for routing in React applications.
 
-Chart.js: A JavaScript charting library for creating interactive charts and graphs.
+Tradeview API: to display a real-time chart, a website might reach out with a TradingView API 
 
 API Name: The app utilizes an API to fetch real-time cryptocurrency data. (Specify the name and any other details about the API you are using)
 
