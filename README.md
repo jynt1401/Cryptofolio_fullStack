@@ -36,14 +36,14 @@ Navigate to the project directory:
 
 cd virtual-cryptotrading-react-app
 ```
-```markdown
 Install dependencies:
+```markdown
 
 
 npm install
 ```
-```markdown
 Start the development server:
+```markdown
 
 npm start
 ```
@@ -59,3 +59,10 @@ React Router: A library for routing in React applications.
 Chart.js: A JavaScript charting library for creating interactive charts and graphs.
 
 API Name: The app utilizes an API to fetch real-time cryptocurrency data. (Specify the name and any other details about the API you are using)
+
+
+
+https://github.com/jynt1401/Cryptofolio_fullStack/assets/100084399/7ff597f0-fe8d-49e4-a433-15dec2a4af83
+
+
+
